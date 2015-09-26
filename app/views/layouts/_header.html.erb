@@ -1,0 +1,24 @@
+ <div class="nav navbar navbar-inverse">
+      <div class="container">
+          
+          <%= link_to "Pin-Board", root_path, class:"navbar-brand" %>
+          <% if user_signed_in? %>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><%= link_to "Добавить фильм", new_movie_path %></li>
+                  <li><%= link_to "Аккаунт", edit_user_registration_path %></li>
+                  <li><%= link_to "Выйти", destroy_user_session_path , method: :delete %></li>
+              </ul>
+          <% else %>
+               <ul class="nav navbar-nav navbar-right">
+                   <li><%= link_to "Регистрация", new_user_registration_path %></li>
+                   <li><%= link_to "Войти", new_user_session_path %></li>
+               </ul>
+              
+
+          <% end %> 
+            <form class="navbar-form pull-right">
+              <input type="text" class="span2">
+              <button type="submit" class="btn">Найти</button>
+            </form>
+      </div>
+   </div>
