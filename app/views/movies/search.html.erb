@@ -1,0 +1,9 @@
+<div class="row-fluid">
+    <div class="span4">
+    <% @movies.each do |movie| %>
+        <%= link_to movie do %>
+            <%= image_tag movie.image.url, size: "300x300" %>
+        <% end %>
+    <% end %>
+    </div>
+</div>

@@ -16,9 +16,12 @@
               
 
           <% end %> 
-            <form class="navbar-form pull-right">
-              <input type="text" class="span2">
-              <button type="submit" class="btn">Найти</button>
-            </form>
+          <%= form_tag search_movies_path, method: :get, class:"navbar-form navbar search", role: "search" do %>
+          <p>
+              <%= text_field_tag :search, params[:search], class:"form-control" %>
+              <%= submit_tag "Search", name: nil, class:"btn btn-default" %>
+          
+          </p>
+          <% end %>    
       </div>
    </div>
